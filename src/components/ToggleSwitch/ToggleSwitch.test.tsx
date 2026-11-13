@@ -27,4 +27,10 @@ describe('ToggleSwitch Component', () => {
     render(<ToggleSwitch label="Modo Oscuro" />);
     expect(screen.getByText('Modo Oscuro')).toBeInTheDocument();
   });
+
+  it('debe renderizar con el estado inicial encendido cuando defaultChecked es true', () => {
+    render(<ToggleSwitch label="Prueba" defaultChecked={true} />);
+    const switchElement = screen.getByLabelText(/prueba/i);
+    expect(switchElement).toBeChecked();
+  });
 });
