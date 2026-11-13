@@ -18,7 +18,7 @@ export default function ToggleSwitch({
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newChecked = event.target.checked;
         setChecked(newChecked);
-        if (onChange) onChange(!newChecked);
+        if (onChange) onChange(newChecked);
     };
 
     return (
@@ -31,7 +31,7 @@ export default function ToggleSwitch({
             color="primary"
             />
         }
-        label={label.toUpperCase()}
+        label={label}
     />
     );
 }
